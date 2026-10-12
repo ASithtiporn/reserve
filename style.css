@@ -1,0 +1,154 @@
+/* ตั้งค่าเริ่มต้น */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* กรอบหลักที่คลุมทั้งปฏิทินและฟอร์ม */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    max-width: 1000px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ฝั่งซ้าย (ปฏิทิน) */
+.calendar-section {
+    flex: 1 1 500px;
+    padding: 30px;
+    background-color: #f8fafc;
+    border-right: 1px solid #e5e7eb;
+}
+
+.calendar-section h2 {
+    color: #1d4ed8;
+    margin-bottom: 10px;
+}
+
+.calendar-section p {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.iframe-container {
+    width: 100%;
+    height: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    background-color: #fff;
+}
+
+.iframe-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* ฝั่งขวา (ฟอร์ม) */
+.form-section {
+    flex: 1 1 400px;
+    padding: 30px;
+}
+
+.form-section h2 {
+    color: #1d4ed8;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #374151;
+    font-size: 14px;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ปุ่มกด */
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+button.disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* ไอคอนโหลด */
+.loader {
+    display: none;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top: 3px solid white;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* สำหรับมือถือ */
+@media (max-width: 768px) {
+    .calendar-section {
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+}
